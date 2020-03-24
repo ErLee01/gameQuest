@@ -3,6 +3,7 @@
 # © 2019 KidsCanCode LLC / All rights reserved.
 import pygame as pg
 from settings import *
+#from pg.sprite import Sprite
 vec = pg.math.Vector2
 
 class Player(pg.sprite.Sprite):
