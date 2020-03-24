@@ -1,4 +1,5 @@
 # Sprite classes for platform game
+# © 2019 KidsCanCode LLC / All rights reserved.
 import pygame as pg
 from pg.sprite import Sprite
 from settings import *
