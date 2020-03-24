@@ -1,13 +1,13 @@
+
 # Sprite classes for platform game
 # © 2019 KidsCanCode LLC / All rights reserved.
 import pygame as pg
-from pg.sprite import Sprite
 from settings import *
 vec = pg.math.Vector2
 
-class Player(Sprite):
+class Player(pg.sprite.Sprite):
     def __init__(self):
-        Sprite.__init__(self)
+        pg.sprite.Sprite.__init__(self)
         self.image = pg.Surface((30, 40))
         self.image.fill(YELLOW)
         self.rect = self.image.get_rect()
