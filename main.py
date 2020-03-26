@@ -7,6 +7,8 @@
 # Week of march 23 - Lore
 # Modules, Github, import as, 
 
+
+#Imports
 import pygame as pg
 from pygame.sprite import Group
 # from pg.sprite import Group
@@ -14,6 +16,7 @@ import random
 from settings import *
 from sprites import *
 
+#Class for game (init self and makes platforms/sprites)
 class Game:
     def __init__(self):
         # initialize game window, etc
@@ -49,7 +52,6 @@ class Game:
         self.all_sprites.update()
         hits = pg.sprite.spritecollide(self.player, self.platforms, False)
         if hits:
-            # print("it collided")
             self.player.pos.y = hits[0].rect.top+1
             self.player.vel.y = 0
 
@@ -77,6 +79,7 @@ class Game:
         # game over/continue
         pass
 
+#more global variables, game for showing screens.
 g = Game()
 g.show_start_screen()
 while g.running:
