@@ -26,7 +26,7 @@ class Game:
         pg.display.set_caption(TITLE)
         self.clock = pg.time.Clock()
         self.running = True
-
+#superclass with the new class to spawn in sprites and player etc..
     def new(self):
         # start a new game
         self.all_sprites = Group()
@@ -34,8 +34,13 @@ class Game:
         self.player = Player(self)
         self.all_sprites.add(self.player)
         ground = Platform(0, HEIGHT-40, WIDTH, 40)
+        plat1 = Platform(200, 400, 150, 20)
         self.all_sprites.add(ground)
         self.platforms.add(ground)
+        self.all_sprites.add(plat1)
+        self.platforms.add(plat1)
+        self.all_sprites.add(plat2)
+        self.platforms.add(plat2)
         self.run()
 
     def run(self):
