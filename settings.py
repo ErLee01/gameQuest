@@ -1,5 +1,7 @@
 # © 2019 KidsCanCode LLC / All rights reserved.
 
+#honestly not a lot I can put in here, but I'll add more when we add more.
+
 # game options/settings
 TITLE = "Jumpy!"
 WIDTH = 480
@@ -21,3 +23,4 @@ GREEN = (0, 255, 0)
 BLUE = (0, 0, 255)
 YELLOW = (255, 255, 0)
 COLOR = (271, 100, 27)
+ORANGE =  (255, 69, 0)
