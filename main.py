@@ -42,10 +42,10 @@ class Game:
         self.platforms.add(plat1)
         self.all_sprites.add(plat2)
         self.platforms.add(plat2)
-        # for plat in range(1,10):
-        #     plat = Platform(random.randint(0, WIDTH), random.randint(0, HEIGHT), 200, 20)
-        #     self.all_sprites.add(plat)
-        #     self.platforms.add(plat)
+        for plat in range(1,5):
+            plat = Platform(random.randint(0, WIDTH), random.randint(0, HEIGHT), 200, 20)
+            self.all_sprites.add(plat)
+            self.platforms.add(plat)
         self.run()
 
     def run(self):
