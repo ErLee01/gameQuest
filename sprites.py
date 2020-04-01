@@ -1,10 +1,12 @@
 
 # Sprite classes for platform game
 # © 2019 KidsCanCode LLC / All rights reserved.
+import pygame
 import pygame as pg
 from pygame.sprite import Sprite
 from settings import *
 vec = pg.math.Vector2
+screen = pygame.display.set_mode((WIDTH,HEIGHT))
 #class and superclass with game image and player variables
 class Player(Sprite):
     # include game parameter to pass game class as argument in main...
@@ -56,12 +58,20 @@ class Player(Sprite):
         #if player runs outside of the screen, it teleports it to the other side.
         if self.pos.x > WIDTH:
             self.pos.x = 0
+            screen.fill(WHITE)
+            #pygame.display.flip()
         if self.pos.x < 0:
             self.pos.x = WIDTH
+            #screen.fill(WHITE)
+            #pygame.display.flip()
         if self.pos.y < 0:
             self.pos.y = HEIGHT
+            #screen.fill(WHITE)
+            #pygame.display.flip()
         if self.pos.y > HEIGHT:
             self.pos.y = 0
+            #screen.fill(WHITE)
+            #pygame.display.flip()
 
         self.rect.midbottom = self.pos
 #platform sprite. has settings like the self init and color and w and h

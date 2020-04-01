@@ -9,12 +9,15 @@
 
 
 #Imports
+import pygame
 import pygame as pg
 from pygame.sprite import Group
 # from pg.sprite import Group
 import random
 from settings import *
 from sprites import *
+
+#screen = pygame.display.set_mode((w,h))
 
 #Class for game (init self and makes platforms/sprites)
 class Game:
@@ -61,6 +64,7 @@ class Game:
             self.events()
             self.update()
             self.draw()
+            self.screen.fill(WHITE)
     #use this later to have the sprite not hit platforms from x 
     def update(self):
         #Game Loop - Update
@@ -80,20 +84,23 @@ class Game:
                     self.playing = False
                 self.running = False
 
-    def draw(self):
-        # Game Loop - draw
-        self.screen.fill(BLACK)
-        self.all_sprites.draw(self.screen)
-        #*after* drawing everything, flip the display
-        pg.display.flip()
+#background
+background = pygame.image.load('background1.jpg')
 
-    def show_start_screen(self):
-        #game splash/start screen
-        pass
+def draw(self):
+    # Game Loop - draw
+    self.screen.blit (background, (0,0))
+    self.all_sprites.draw(self.screen)
+    #*after* drawing everything, flip the display
+    pg.display.flip()
 
-    def show_go_screen(self):
-        #game over/continue
-        pass
+def show_start_screen(self):
+    #game splash/start screen
+    pass
+
+def show_go_screen(self):
+    #game over/continue
+    pass
 
 #more global variables, game for showing screens.
 g = Game()

@@ -1,6 +1,7 @@
 # © 2019 KidsCanCode LLC / All rights reserved.
 
 #honestly not a lot I can put in here, but I'll add more when we add more.
+import pygame
 
 # game options/settings
 TITLE = "Jumpy!"
