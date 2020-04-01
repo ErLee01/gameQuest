@@ -84,23 +84,20 @@ class Game:
                     self.playing = False
                 self.running = False
 
-#background
-background = pygame.image.load('background1.jpg')
+    def draw(self):
+        # Game Loop - draw
+        self.screen.fill(BLACK)
+        self.all_sprites.draw(self.screen)
+        #*after* drawing everything, flip the display
+        pg.display.flip()
 
-def draw(self):
-    # Game Loop - draw
-    self.screen.blit (background, (0,0))
-    self.all_sprites.draw(self.screen)
-    #*after* drawing everything, flip the display
-    pg.display.flip()
+    def show_start_screen(self):
+        #game splash/start screen
+        pass
 
-def show_start_screen(self):
-    #game splash/start screen
-    pass
-
-def show_go_screen(self):
-    #game over/continue
-    pass
+    def show_go_screen(self):
+        #game over/continue
+        pass
 
 #more global variables, game for showing screens.
 g = Game()
