@@ -20,6 +20,13 @@ class Player(Sprite):
         self.pos = vec(WIDTH / 2, HEIGHT / 2)
         self.vel = vec(0, 0)
         self.acc = vec(0, 0)
+        self.hitpoints = 100
+    def pew(self):
+        lazer = Pewpew(self.game, self.pos.x + self.rect.width/2, self.pos.y, 10, 10)
+        # print("trying to pewpewpew")
+        self.game.all_sprites.add(lazer)
+        # self.game.platforms.add(lazer)
+        self.game.projectiles.add(lazer)
     #nothing much here yet...
     def myMethod(self):
         pass
@@ -31,6 +38,17 @@ class Player(Sprite):
         if hits: 
             self.vel.y = -10
     #updates self when keys pressed
+class Pewpew(Sprite):
+    def __init__(self, game, x, y, w, h):
+        Sprite.__init__(self)
+        self.game = game
+        self.image = pg.Surface((w, h))
+        self.image.fill(LIGHTBLUE)
+        self.rect = self.image.get_rect()
+        self.rect.x = x
+        self.rect.y = y
+        self.birth = time.perf_counter_ns()
+        self.lifespan = 1000000000
     def update(self):
         self.acc = vec(0, 0.5)
         keys = pg.key.get_pressed()
