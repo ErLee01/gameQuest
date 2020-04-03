@@ -38,17 +38,6 @@ class Player(Sprite):
         if hits: 
             self.vel.y = -10
     #updates self when keys pressed
-class Pewpew(Sprite):
-    def __init__(self, game, x, y, w, h):
-        Sprite.__init__(self)
-        self.game = game
-        self.image = pg.Surface((w, h))
-        self.image.fill(LIGHTBLUE)
-        self.rect = self.image.get_rect()
-        self.rect.x = x
-        self.rect.y = y
-        self.birth = time.perf_counter_ns()
-        self.lifespan = 1000000000
     def update(self):
         self.acc = vec(0, 0.5)
         keys = pg.key.get_pressed()
@@ -101,3 +90,19 @@ class Platform(Sprite):
         self.rect = self.image.get_rect()
         self.rect.x = x
         self.rect.y = y
+class Pewpew(Sprite):
+    def __init__(self, game, x, y, w, h):
+        Sprite.__init__(self)
+        self.game = game
+        self.image = pg.Surface((w, h))
+        self.image.fill(LIGHTBLUE)
+        self.rect = self.image.get_rect()
+        self.rect.x = x
+        self.rect.y = y
+        self.birth = time.perf_counter_ns()
+        self.lifespan = 1000000000
+    def update(self):
+        self.rect.y -= 5
+        self.now = time.perf_counter_ns()
+        if self.now - self.birth > self.lifespan:
+            self.kill()
