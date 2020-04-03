@@ -90,17 +90,24 @@ class Platform(Sprite):
         self.rect = self.image.get_rect()
         self.rect.x = x
         self.rect.y = y
+    #making the class for bullets
 class Pewpew(Sprite):
+    #defines the init (self init)
     def __init__(self, game, x, y, w, h):
         Sprite.__init__(self)
+        #defining some self attributes for pewpew
         self.game = game
         self.image = pg.Surface((w, h))
+        #color
         self.image.fill(LIGHTBLUE)
+        #shape
         self.rect = self.image.get_rect()
         self.rect.x = x
         self.rect.y = y
         self.birth = time.perf_counter_ns()
+        #how long it stays on screen (1 sec)
         self.lifespan = 1000000000
+    #updating for pewpews, shooting moves bullet
     def update(self):
         self.rect.y -= 5
         self.now = time.perf_counter_ns()
