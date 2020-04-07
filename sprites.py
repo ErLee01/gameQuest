@@ -14,6 +14,7 @@ class Player(Sprite):
         Sprite.__init__(self)
         self.game = game
         self.image = pg.Surface((50, 40))
+        #color of player
         self.image.fill(LIGHTBLUE)
         self.rect = self.image.get_rect()
         self.rect.center = (WIDTH / 2, HEIGHT / 2)
@@ -113,6 +114,7 @@ class Pewpew(Sprite):
         self.lifespan = 1000000000
     #updating for pewpews, shooting moves bullet
     def update(self):
+        #changed to lower jump magnitude.
         self.rect.y -= 5
         self.now = time.perf_counter_ns()
         if self.now - self.birth > self.lifespan:
