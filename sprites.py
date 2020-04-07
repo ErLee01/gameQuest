@@ -14,7 +14,7 @@ class Player(Sprite):
         Sprite.__init__(self)
         self.game = game
         self.image = pg.Surface((50, 40))
-        self.image.fill(BLUE)
+        self.image.fill(LIGHTBLUE)
         self.rect = self.image.get_rect()
         self.rect.center = (WIDTH / 2, HEIGHT / 2)
         self.pos = vec(WIDTH / 2, HEIGHT / 2)
@@ -54,6 +54,8 @@ class Player(Sprite):
         #calls jump fn when we hit spacebar
         if keys[pg.K_SPACE]:
             self.jump()
+        if keys[pg.K_w]:
+            self.jump()
 
         # apply friction
         self.acc.x += self.vel.x * PLAYER_FRICTION
@@ -63,6 +65,8 @@ class Player(Sprite):
         self.pos += self.vel + 0.5 * self.acc
         # wrap around the sides of the screen
         #if player runs outside of the screen, it teleports it to the other side.
+
+        #doesn't work really, other than moving the player.
         if self.pos.x > WIDTH:
             self.pos.x = 0
             screen.fill(WHITE)
