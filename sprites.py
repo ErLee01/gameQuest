@@ -36,6 +36,8 @@ class Player(Sprite):
         self.rect.x += 1
         hits = pg.sprite.spritecollide(self, self.game.platforms, False)
         self.rect.x -= 1
+        self.game.screen.fill(BLUE)
+        
         if hits: 
             self.vel.y = -10
     #updates self when keys pressed
@@ -55,6 +57,7 @@ class Player(Sprite):
         #calls jump fn when we hit spacebar
         if keys[pg.K_SPACE]:
             self.jump()
+            
         if keys[pg.K_w]:
             self.jump()
 

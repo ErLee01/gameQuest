@@ -64,7 +64,7 @@ class Game:
             self.events()
             self.update()
             self.draw()
-            self.screen.fill(WHITE)
+            #self.screen.fill(WHITE)
     #use this later to have the sprite not hit platforms from x 
     def update(self):
         #Game Loop - Update
@@ -86,7 +86,7 @@ class Game:
 
     def draw(self):
         # Game Loop - draw
-        self.screen.fill(BLACK)
+        #self.screen.fill(BLACK)
         self.all_sprites.draw(self.screen)
         #*after* drawing everything, flip the display
         pg.display.flip()
